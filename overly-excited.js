@@ -20,22 +20,25 @@
 // Create an array that contains the words in the sentence
 let sentence = ["The", "walrus", "danced", "through", "the", "trees", "in", "the", "light", "of", "the", "moon"];
 
+const letterOfChoice = "*"; // new variable that accept a letter of choice to be printed after every 3 words
+
 /*
     The addExcitement function should be an impure function, and accept
     the array as the sole argument. It should iterate over the array
     and output the words to the browser console.
 */
-function addExcitement(theWordArray) {
+function addExcitement(theWordArray, letterOfChoice) {
 
   // Each time the for loop executes, you're going to add one more word to this string
   let buildMeUp = ""
   let thirdWordCounter = 0;
+  
 
   for (let i = 0; i < theWordArray.length; i++) {
     thirdWordCounter++;
         // lets check if thirdWordCounter got to 3, and if so, lets add a print out of "!"
     if (thirdWordCounter === 3) {
-      buildMeUp += sentence[i] += "!" + " ";
+      buildMeUp += `${sentence[i]} ${letterOfChoice} `; /// concatintor been edited to add a letter of choice
       // lets reset thirdWordCounter to get ready for counting again to 3
       thirdWordCounter = 0;
     } else {
@@ -47,7 +50,7 @@ function addExcitement(theWordArray) {
   }
 }
 
-// Invoke the function and pass in the array
-addExcitement(sentence)
+// Invoke the function and pass in the array **edited** and take a letter to be printed every 3 words
+addExcitement(sentence, letterOfChoice)
 
 
